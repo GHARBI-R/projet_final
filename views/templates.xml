@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="clients_page" name="Topnet clients">
+        <t t-call="website.layout">
+            <div class="container">
+
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <td>
+                                Nom des clients
+                            </td>
+                            <td>
+                                cin des clients
+                            </td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <t t-foreach="clients " t-as="client">
+                            <tr>
+                                <td>
+                                    <t t-esc="client.name"/>
+                                </td>
+
+
+                                <td>
+                                    <t t-esc="client.cin"/>
+                                </td>
+                            </tr>
+                        </t>
+                    </tbody>
+                </table>
+
+            </div>
+        </t>
+    </template>
+
+</odoo>
