@@ -15,7 +15,6 @@
                 <field name="douane"/>
                 <field name="activity"/>
                 <field name="adresse_siege"/>
-
             </tree>
         </field>
     </record>
