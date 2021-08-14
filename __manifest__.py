@@ -27,7 +27,9 @@
         'data/sequence.xml',
         'views/client.xml',
         'views/user.xml',
-        'views/templates.xml'
+        'views/views.xml',
+        'views/addFO.xml',
+        'views/addcontact.xml',
 
     ],
     # only loaded in demonstration mode
