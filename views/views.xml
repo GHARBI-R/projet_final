@@ -1,26 +1,26 @@
 <odoo>
   <data>
 
-    <!-- Menu bouton Ajout utilisateur -->
+    <!-- Menu Ajout utilisateur -->
     <record id="menu_user" model="website.menu">
       <field name="name">Créer un utilisateur</field>
-      <field name="url">/adduser_form</field>
+      <field name="url">/adduser</field>
       <field name="parent_id" ref="website.main_menu" />
       <field name="sequence" type="int">11</field>
     </record>
 
-    <!-- Menu bouton Ajout utilisateur -->
+    <!-- Sous Menu liste des utilisateur -->
     <record id="menu_list" model="website.menu">
-      <field name="name">List des utilisateurs</field>
+      <field name="name">Liste des utilisateurs</field>
       <field name="url">/user/list</field>
       <field name="parent_id" ref="menu_user"/>
       <field name="sequence" type="int">11</field>
     </record>
 
-    <!-- Menu bouton Ajout Demande FO -->
+    <!-- Menu Ajout Demande FO -->
     <record id="menu_subscription" model="website.menu">
-      <field name="name">Demande de Souscription FO</field>
-      <field name="url">/addsubscription_form</field>
+      <field name="name">Demande de dépot dossier FO</field>
+      <field name="url">/addsubscription</field>
       <field name="parent_id" ref="website.main_menu" />
       <field name="sequence" type="int">22</field>
     </record>
@@ -29,8 +29,8 @@
     <record id="menu_follow" model="website.menu">
       <field name="name">suivre mes demandes</field>
       <field name="url">/followdemands</field>
-      <field name="parent_id" ref="website.main_menu" />
-      <field name="sequence" type="int">33</field>
+      <field name="parent_id" ref="menu_subscription" />
+      <field name="sequence" type="int">22</field>
     </record>
 
     <!-- Menu bouton Ajout Contact -->

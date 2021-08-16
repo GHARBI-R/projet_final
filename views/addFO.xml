@@ -8,8 +8,8 @@
             <div id="wrap">
                 <div class="oe_structure">
                     <div class="container">
-                        <form role="form" action="#" method="post">
-                            <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()" />
+                        <form role="form" action="#"  method="POST" >
+                            <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
                             <div class="form-group">
                                 <label for="offre" class="control-label">Offre</label>
                                 <select class="form-control form-control-sm">
@@ -33,7 +33,9 @@
                                 <label for="contact_technique" class="control-label">Contact Technique</label>
                                 <select class="form-control form-control-sm">
                                     <t t-foreach="contacts" t-as="contact">
-                                    <option> <t t-esc="contact.name" /> </option>
+                                        <option>
+                                            <t t-esc="contact.name"/>
+                                        </option>
                                     </t>
                                 </select>
                             </div>
@@ -41,9 +43,9 @@
                             <div class="form-group">
                                 <label for="contact_commercial" class="control-label">Contact Commercial</label>
                                 <select class="form-control form-control-sm">
-                                    <option>Salmen Aouini / 98.199.699</option>
-                                    <option>Ahmed Ben Salah / 99.123.456</option>
-                                    <option>Slim Ben Abdallah / 97.987.654</option>
+                                    <option></option>
+                                    <option></option>
+                                    <option></option>
                                 </select>
                             </div>
 
@@ -53,6 +55,17 @@
                                     <option>Guichet Unique Topnet</option>
                                     <option>Guichet double (Topnet / Tunisie Telecom)</option>
                                 </select>
+                            </div>
+
+
+                            <div class="mb-3">
+                                <label for="formFile" class="form-label">Registre de commerce</label>
+                                <input class="form-control" type="file" ></input>
+                            </div>
+
+                            <div>
+                                <label for="user_email" class="control-label">Matricule fiscale </label>
+                                <input type="text" class="form-control" placeholder="matricule fiscale"></input>
                             </div>
 
                             <div class="form-row">
@@ -72,11 +85,15 @@
                                 </div>
                                 <div class="col">
                                     <label for="user_email" class="control-label">Code Postal</label>
-                                    <input type="text" name="user_email" t-att-value="user_email" id="user_email" class="form-control" placeholder="1003" required="required" disabled='true'></input>
+                                    <input type="text" name="user_email" t-att-value="user_email" id="user_email"
+                                           class="form-control" placeholder="1003" required="required"
+                                           disabled='true'></input>
                                 </div>
                                 <div class="col">
                                     <label for="user_email" class="control-label">Précision</label>
-                                    <input type="text" name="user_email" t-att-value="user_email" id="user_email" class="form-control" placeholder="Ex :75 Rue de la Republique" required="required"></input>
+                                    <input type="text" name="user_email" t-att-value="user_email" id="user_email"
+                                           class="form-control" placeholder="Ex :75 Rue de la Republique"
+                                           required="required"></input>
                                 </div>
                             </div>
 

@@ -14,7 +14,7 @@ class TopnetClient(models.Model):
 
         result = super(TopnetClient, self).create(vals)
         return result
-
+   # création de l'état de dossier
     def action_depose(self):
         for rec in self:
             rec.state = 'déposé'
