@@ -5,10 +5,10 @@ class TopnetContact(models.Model):
     _name = 'topnet.contact'
     _description = 'Liste de contacts'
 
-    name = fields.Char(string='Nom du contact', required=True)
+    name = fields.Char(string='Nom et prénom', required=True)
     tel_fixe = fields.Char(string='Tel fixe', size=8, required=True)
     tel_gsm = fields.Char(string='Tel mobile', size=8, required=True)
-    email = fields.Char(string='Email', required=True)
+    email = fields.Char(string='E-mail', required=True)
     nature = fields.Selection(
         [
             ('Commercial', 'Commercial'),

@@ -91,7 +91,7 @@
                                 </div>
                                 <div class="col">
                                     <label for="user_email" class="control-label">Précision</label>
-                                    <input type="text" name="user_email" t-att-value="user_email" id="user_email"
+                                    <input type="text"  t-att-value="user_email" id="precision"
                                            class="form-control" placeholder="Ex :75 Rue de la Republique"
                                            required="required"></input>
                                 </div>

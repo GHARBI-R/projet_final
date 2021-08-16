@@ -1,12 +1,27 @@
 <odoo>
   <data>
+     <!-- Menu espace  client -->
+    <record id="menu_client" model="website.menu">
+      <field name="name">Espace client </field>
+<!--      <field name="url">/adduser</field>-->
+      <field name="parent_id" ref="website.main_menu" />
+      <field name="sequence" type="int">11</field>
+    </record>
+
+         <!-- Sous Menu Ajout client -->
+    <record id="menu_inscription" model="website.menu">
+      <field name="name">Inscription  </field>
+      <field name="url">/addclient</field>
+      <field name="parent_id" ref="menu_client" />
+      <field name="sequence" type="int">11</field>
+    </record>
 
     <!-- Menu Ajout utilisateur -->
     <record id="menu_user" model="website.menu">
       <field name="name">Créer un utilisateur</field>
       <field name="url">/adduser</field>
       <field name="parent_id" ref="website.main_menu" />
-      <field name="sequence" type="int">11</field>
+      <field name="sequence" type="int">22</field>
     </record>
 
     <!-- Sous Menu liste des utilisateur -->
@@ -14,7 +29,7 @@
       <field name="name">Liste des utilisateurs</field>
       <field name="url">/user/list</field>
       <field name="parent_id" ref="menu_user"/>
-      <field name="sequence" type="int">11</field>
+      <field name="sequence" type="int">22</field>
     </record>
 
     <!-- Menu Ajout Demande FO -->
@@ -22,7 +37,7 @@
       <field name="name">Demande de dépot dossier FO</field>
       <field name="url">/addsubscription</field>
       <field name="parent_id" ref="website.main_menu" />
-      <field name="sequence" type="int">22</field>
+      <field name="sequence" type="int">33</field>
     </record>
 
     <!-- Menu bouton Suivi demande -->
@@ -30,7 +45,7 @@
       <field name="name">suivre mes demandes</field>
       <field name="url">/followdemands</field>
       <field name="parent_id" ref="menu_subscription" />
-      <field name="sequence" type="int">22</field>
+      <field name="sequence" type="int">44</field>
     </record>
 
     <!-- Menu bouton Ajout Contact -->
@@ -38,7 +53,7 @@
       <field name="name">Gérer mes contacts</field>
       <field name="url">/CreateContact</field>
       <field name="parent_id" ref="website.main_menu" />
-      <field name="sequence" type="int">44</field>
+      <field name="sequence" type="int">55</field>
     </record>
 
 

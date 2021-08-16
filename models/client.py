@@ -25,21 +25,26 @@ class TopnetClient(models.Model):
     def action_annule(self):
          for rec in self:
                rec.state = 'annulé'
-    name = fields.Char(string='Nom', required=True, track_visibility="always")
-    cin = fields.Integer(string='cin', required=True, track_visibility="always")
-    raison = fields.Char(string='Raison Sociale', required=True)
-    #rc = fields.Char(string='Registre de Commerce', required=True)
-    tva = fields.Char(string='TVA', required=True)
-    exoneration = fields.Boolean(string='Exoneration', required=True)
-    douane = fields.Char(string='Douane', required=True)
-    activity = fields.Char(string='Activité', required=True)
-    adresse_siege = fields.Char(string='Adresse Siege Sociale', required=True)
-    ville_siege = fields.Char(string='Ville du Siege')
-    #tel_siege = fields.Integer(string='Tel Siege', size=8)
-    #adresse_facture = fields.Text(string='Adresse Facturation', required=True)
-    #ville_facture = fields.Integer(string='Ville Facturation', required=True)
-    #tel_facture = fields.Char(string='Tel Facturation', size=8, required=True)
-    #email = fields.Char(string='Email', required=True)
+    name = fields.Char(string='Nom et Prénom du gérant', required=True, track_visibility="always")
+    cin = fields.Integer(string='Numéro CIN/Passeport', required=True, track_visibility="always")
+    email_p=  fields.Char(String= 'E-mail principal')
+    raison = fields.Char(string='Raison Sociale')
+    rc = fields.Char(string='Registre de Commerce')
+    tva = fields.Char(string='Code TVA')
+    exoneration = fields.Boolean(string='Exonéré')
+    douane = fields.Char(string='code en douane')
+    activity = fields.Char(string="Activité de l'entreprise")
+    adresse_s = fields.Char(string='Adresse Siege Sociale')
+    # ville  et code postale
+    tel_s = fields.Integer(string='Tél', size=8)
+    fax_s = fields.Integer(string='Fax', size=8)
+
+    adresse_i = fields.Text(string="Adresse D'installation ")
+    #ville et code postal
+    tel_i = fields.Char(string='Tel', size=8)
+    fax_i = fields.Integer(string='Fax', size=8)
+
+
     #contact_id = fields.One2many('topnet.contact', 'client_id', string='Contact ID')
     ville_id = fields.Many2one('topnet.ville', 'ville')
     gouv_id = fields.Many2one('topnet.gouvernorat', string='gouvernorat')

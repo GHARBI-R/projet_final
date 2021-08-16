@@ -59,3 +59,8 @@ class Topnet(http.Controller):
         return http.request.render("pfe_topnet.list_contact", {'contacts':contacts})
 
 
+class Topnet(http.Controller):
+    @http.route('/addclient', website='true', auth='public')
+    def index(self, **kw):
+        contacts = request.env['topnet.clt'].sudo().search([])
+        return http.request.render("pfe_topnet.create_client")
