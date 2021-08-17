@@ -31,7 +31,7 @@ class Topnet(http.Controller):
 class Topnet(http.Controller):
     @http.route('/CreateContact', website='true', auth='user')
     def index(self, **kw):
-        return http.request.render("pfe_topnet.create_contact", {})
+        return http.request.redirect("pfe_topnet.create_contact", {})
 
 class Topnet(http.Controller):
     @http.route('/contact_thanks', website='true', auth='user')
@@ -40,14 +40,14 @@ class Topnet(http.Controller):
 
 
 class Topnet(http.Controller):
-    @http.route('/create/contact',type='http', methods=['POST'], website='true', auth='user')
+    @http.route('/create/contact',type='http', methods=['POST'], website='true', auth='public')
     def index(self, **post):
         contact = request.env['topnet.contact'].create({
-            'name': post.get('contact_name'),
-            'tel_fixe': post.get('contact_telfix'),
-            'tel_gsm': post.get('contact_telgsm'),
-            'email': post.get('contact_email'),
-            'nature': post.get('contact_nature'),
+            'name': post.get('name'),
+            'tel_fixe': post.get('telfix'),
+            'tel_gsm': post.get('telgsm'),
+            'email': post.get('email'),
+            'nature': post.get('nature'),
             #'client_id': request.uid,
         })
         return http.request.render("pfe_topnet.contact_thanks", {})

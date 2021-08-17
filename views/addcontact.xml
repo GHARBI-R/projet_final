@@ -8,31 +8,31 @@
             <div id="wrap">
                 <div class="oe_structure">
                     <div class="container">
-                        <form role="form" action="/create/contact" method="post">
+                        <form role="form" action="/create/contact" method="POST">
                             <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()" />
                             <div class="form-group">
                                 <label for="contact_name" class="control-label">Nom du Contact</label>
-                                <input type="text" name="contact_name" t-att-value="contact_name" id="contact_name" class="form-control" placeholder="Nom et Prenom" required="required"></input>
+                                <input type="text" name="contact_name" t-att-value="name" id="contact_name" class="form-control" placeholder="Nom et Prenom" required="required"></input>
                             </div>
 
                             <div class="form-group">
                                 <label for="contact_telfix" class="control-label">Tél Fixe</label>
-                                <input type="text" name="contact_telfix" t-att-value="contact_telfix" id="contact_telfix" class="form-control" placeholder="EX: 71.." required="required"></input>
+                                <input type="text" name="contact_telfix" t-att-value="telfix" id="contact_telfix" class="form-control" placeholder="EX: 71.." required="required"></input>
                             </div>
 
                             <div class="form-group">
                                 <label for="contact_telgsm" class="control-label">Tél Mobile</label>
-                                <input type="text" name="contact_telgsm" t-att-value="contact_telgsm" id="contact_telgsm" class="form-control" placeholder="Nom et Prenom" required="required"></input>
+                                <input type="text" name="contact_telgsm" t-att-value="telgsm" id="contact_telgsm" class="form-control" placeholder="Nom et Prenom" required="required"></input>
                             </div>
 
                             <div class="form-group">
                                 <label for="contact_email" class="control-label">E-Mail</label>
-                                <input type="email" name="contact_email" t-att-value="contact_email" id="contact_email" class="form-control" placeholder="email@address.com" required="required"></input>
+                                <input type="email" name="contact_email" t-att-value="email" id="contact_email" class="form-control" placeholder="email@address.com" required="required"></input>
                             </div>
 
                             <div class="form-group">
                                 <label for="contact_nature" class="control-label">Type de Contact</label>
-                                <select class="form-control form-control-sm" name="contact_nature" id="contact_nature">
+                                <select class="form-control form-control-sm" name="nature" id="contact_nature">
                                     <option>Commercial</option>
                                     <option>Technique</option>
                                     <option>Administratif</option>

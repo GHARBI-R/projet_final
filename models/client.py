@@ -31,7 +31,7 @@ class TopnetClient(models.Model):
     raison = fields.Char(string='Raison Sociale')
     rc = fields.Char(string='Registre de Commerce')
     tva = fields.Char(string='Code TVA')
-    exoneration = fields.Boolean(string='Exonéré')
+    exonere = fields.Boolean(string='Exonéré')
     douane = fields.Char(string='code en douane')
     activity = fields.Char(string="Activité de l'entreprise")
     adresse_s = fields.Char(string='Adresse Siege Sociale')

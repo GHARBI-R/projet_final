@@ -1,61 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
 <odoo>
-  <data>
-     <!-- Menu espace  client -->
-    <record id="menu_client" model="website.menu">
-      <field name="name">Espace client </field>
-<!--      <field name="url">/adduser</field>-->
-      <field name="parent_id" ref="website.main_menu" />
-      <field name="sequence" type="int">11</field>
-    </record>
-
-         <!-- Sous Menu Ajout client -->
-    <record id="menu_inscription" model="website.menu">
-      <field name="name">Inscription  </field>
-      <field name="url">/addclient</field>
-      <field name="parent_id" ref="menu_client" />
-      <field name="sequence" type="int">11</field>
-    </record>
-
-    <!-- Menu Ajout utilisateur -->
-    <record id="menu_user" model="website.menu">
-      <field name="name">Créer un utilisateur</field>
-      <field name="url">/adduser</field>
-      <field name="parent_id" ref="website.main_menu" />
-      <field name="sequence" type="int">22</field>
-    </record>
-
-    <!-- Sous Menu liste des utilisateur -->
-    <record id="menu_list" model="website.menu">
-      <field name="name">Liste des utilisateurs</field>
-      <field name="url">/user/list</field>
-      <field name="parent_id" ref="menu_user"/>
-      <field name="sequence" type="int">22</field>
-    </record>
-
-    <!-- Menu Ajout Demande FO -->
-    <record id="menu_subscription" model="website.menu">
-      <field name="name">Demande de dépot dossier FO</field>
-      <field name="url">/addsubscription</field>
-      <field name="parent_id" ref="website.main_menu" />
-      <field name="sequence" type="int">33</field>
-    </record>
-
-    <!-- Menu bouton Suivi demande -->
-    <record id="menu_follow" model="website.menu">
-      <field name="name">suivre mes demandes</field>
-      <field name="url">/followdemands</field>
-      <field name="parent_id" ref="menu_subscription" />
-      <field name="sequence" type="int">44</field>
-    </record>
-
-    <!-- Menu bouton Ajout Contact -->
-    <record id="menu_contact" model="website.menu">
-      <field name="name">Gérer mes contacts</field>
-      <field name="url">/CreateContact</field>
-      <field name="parent_id" ref="website.main_menu" />
-      <field name="sequence" type="int">55</field>
-    </record>
-
-
-  </data>
+    <template id="custom_header" inherit_id="website.layout" name="Custom Header">
+        <xpath expr="//header[@id='top']/nav" position="replace">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Acceuil</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Espace Client
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="/addclient">Inscription</a>
+                            <a class="dropdown-item" href="/addsubscription">Dépot de dossier</a>
+                            <a class="dropdown-item" href="#">Suivi de dossier</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Espace utilisateur
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="/adduser">Inscription</a>
+                            <a class="dropdown-item" href="/user/list/">liste des utilisateurs</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="www.topnet.tn">Contactez nous</a>
+                    </li>
+                </ul>
+            </nav>
+        </xpath>
+    </template>
 </odoo>
