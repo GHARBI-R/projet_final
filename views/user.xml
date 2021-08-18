@@ -8,7 +8,7 @@
             <div id="wrap">
                 <div class="oe_structure">
                     <div class="container">
-                        <form role="form" action="/create/user" method="post">
+                        <form role="form" action="/create/user" method="POST">
                             <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
                             <div class="form-group">
                                 <label for="user_name" class="control-label">Nom</label>

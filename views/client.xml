@@ -1,169 +1,127 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
-    <!-- inscription client -->
-
-    <template id="create_client" name="inscription client">
-        <t t-call="website.layout">
-            <div id="wrap">
-                <div class="oe_structure">
-                    <div class="container">
-                        <form role="form" action="#" method="post">
-                            <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
-
-                            <div class="form-group">
-                                <label for="name" class="control-label">Nom et prénom du gérant</label>
-                                <input type="text" name="name" t-att-value="name" id="name"
-                                       class="form-control" required="required"></input>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="user_email" class="control-label">Numéro CIN/ Passeport</label>
-                                <input type="text" name="cin" t-att-value="cin" id="cin"
-                                       class="form-control" required="required"></input>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="user_email" class="control-label">Raison sociale</label>
-                                <input type="text" name="raison" t-att-value="raison" id="raison"
-                                       class="form-control" required="required"></input>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="user_email" class="control-label">Registre de commerce</label>
-                                <input type="text" name="rc" t-att-value="rc" id="rc"
-                                       class="form-control" required="required"></input>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="user_email" class="control-label">code TVA</label>
-                                <input type="text" name="tva" t-att-value="tva" id="tva"
-                                       class="form-control" required="required"></input>
-                            </div>
-
-
-                            <div>
-                                <label class="form-check form-check-inline" for="defaultCheck1">
-                                    Exonéré
-                                </label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" t-att-value="exonere"
-                                       value="option1"></input>
-                                <label class="form-check-label" for="inlineCheckbox1">OUI</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="inlineCheckbox2"
-                                       value="option2" t-att-value="exonere"></input>
-                                <label class="form-check-label" for="inlineCheckbox2">NON</label>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="user_email" class="control-label">code en douane</label>
-                                <input type="text" name="douane" t-att-value="douane" id="douane"
-                                       class="form-control" required="required"></input>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="user_email" class="control-label">Activité de l'entreprise</label>
-                                <input type="text" name="activity" t-att-value="activity" id="activity"
-                                       class="form-control" required="required"></input>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="user_email" class="control-label">adresse de correspondance</label>
-                                <input type="text" name="adresse_s" t-att-value="adresse_s" id="adresse_s"
-                                       class="form-control" required="required"></input>
-                            </div>
-
-                            <div class="form-row">
-                                <div class="col">
-                                    <label for="user_email" class="control-label">Gouvernorat</label>
-                                    <select class="form-control form-control-sm">
-                                        <option>Tunis</option>
-                                        <option>Ariana</option>
-                                    </select>
-                                </div>
-                                <div class="col">
-                                    <label for="user_email" class="control-label">Ville</label>
-                                    <select class="form-control form-control-sm">
-                                        <option>Menzah 5</option>
-                                        <option>Menzah 6</option>
-                                    </select>
-                                </div>
-                                <div class="col">
-                                    <label for="user_email" class="control-label">Code Postal</label>
-                                    <input type="text" name="user_email" t-att-value="user_email" id="user_email"
-                                           class="form-control" placeholder="1003"
-                                           disabled='true'></input>
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="user_email" class="control-label">Tél</label>
-                                <input type="text" name="" t-att-value="user_email" id=""
-                                       class="form-control" ></input>
-                            </div>
-                            <div class="form-group">
-                                <label for="user_email" class="control-label">Fax</label>
-                                <input type="text" name="" t-att-value="user_email" id=""
-                                       class="form-control" ></input>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="user_email" class="control-label">Adresse d'installation </label>
-                                <input type="text" name="" t-att-value="user_email" id=""
-                                       class="form-control" ></input>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="user_email" class="control-label">Tél</label>
-                                <input type="text" name="" t-att-value="user_email" id=""
-                                       class="form-control" ></input>
-                            </div>
-                            <div class="form-group">
-                                <label for="user_email" class="control-label">Fax</label>
-                                <input type="text" name="" t-att-value="user_email" id=""
-                                       class="form-control" ></input>
-                            </div>
-
-                            <div class="clearfix oe_login_buttons">
-                                <button type="submit" class="btn btn-success">Valider</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </t>
-    </template>
-
-    <!-- Success Page  -->
-
-    <record id="user_thanks" model="website.page">
-        <field name="name">Thanks</field>
-        <field name="type">qweb</field>
-        <field name="url">/user-success</field>
-        <field name="website_published">True</field>
-        <field name="key">topnet.user_success</field>
+    <!--tree view of the client model-->
+    <record id="client_tree" model="ir.ui.view">
+        <field name="name">topnet.clt.tree</field>
+        <field name="model">topnet.clt</field>
         <field name="arch" type="xml">
-            <t name="Thanks" t-name="topnet.user_success">
-                <t t-call="website.layout">
-                    <div id="wrap">
-                        <div class="container">
-                            <h1>Success !</h1>
-                            <div class="row">
-                                <div class="col-lg-8">
-                                    <div class="alert alert-success" role="status">
-                                        L'utilisateur a été ajouté avec succès.
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </t>
-            </t>
+            <tree string="clients">
+                <field name="name_seq"/>
+                <field name="cin" string="cin"/>
+                <field name="raison"/>
+                <field name="tva"/>
+                <field name="exonere"/>
+                <field name="douane"/>
+                <field name="activity"/>
+                <field name="adresse_s"/>
+
+            </tree>
         </field>
     </record>
 
+    <!--form view of the patient model-->
+    <record id="client_form" model="ir.ui.view">
+        <field name="name">topnet.clt.form</field>
+        <field name="model">topnet.clt</field>
+        <field name="arch" type="xml">
+            <form string="Clients">
+                <header>
+
+                    <div class="oe_button_box" name="button_box">
+                        <button class="oe_stat_button" name="toggle_active" type="object" icon="fa-archive">
+                            <field name="active" widget="boolean_button"></field>
+                        </button>
+                    </div>
+
+                    <button name="action_valide" type="object" string="Valider" class="oe_highlight" states="déposé"
+                            attrs="{'invisible': [('state','!=', 'annulé')]}"/>
+                    <button name="action_annule" type="object" string="Annuler" class="oe_highlight"
+                            attrs="{'invisible': [('state','!=', 'validé')]}"/>
+                    <field name="state" widget="statusbar" statusbar_visible="déposé,validé,annulé"/>
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name_seq" readonly="1"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group string="Données personnelles">
+
+                            <group>
+                                <field name="name"/>
+                                <field name="cin"/>
+                            </group>
+                        </group>
+                        <group string="Données professionelles">
+                            <group>
+                                <field name="adresse_s"/>
+<!--                                <field name="ville_siege"/>-->
+                                <field name="raison"/>
+                                <field name="tva"/>
+                                <field name="exonere"/>
+                                <field name="douane"/>
+                                <field name="activity"/>
+                                <field name="gouv_id"/>
+                                <field name="ville_id"/>
+                            </group>
+                        </group>
+                    </group>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="activity_ids" widget="mail_activity"/>
+                    <field name="message_ids" widget="mail_thread" options="{'post_refresh': 'recipients'}"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <!--action of the clients menu-->
+    <record id="action_clt" model="ir.actions.act_window">
+        <field name="name">Clients</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">topnet.clt</field>
+        <field name="view_mode">kanban,form,tree</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create your First client !
+            </p>
+        </field>
+    </record>
+
+    <record id="action_suivi" model="ir.actions.act_window">
+        <field name="name">Suivi</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">topnet.clt</field>
+        <field name="view_mode">form,kanban,tree</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create your First client !
+            </p>
+        </field>
+    </record>
+
+    <!--la vue recherche d'un client-->
+    <record id="topnet_clt_search" model="ir.ui.view">
+        <field name="name">topnet.clt.search</field>
+        <field name="model">topnet.clt</field>
+        <field name="arch" type="xml">
+            <search string="rechercher un client">
+                <field name="name"
+                       filter_domain="['|',('name', 'ilike', self),('name_seq', 'ilike', self),('cin', 'ilike', self)]"/>
+                <!--                <field name="name"/>-->
+                <!--                <field name="role"/>-->
+                <!--                <field name="cin"/>-->
+            </search>
+        </field>
+    </record>
+
+    <!--creating menus-->
+    <menuitem id="topnet_root" name="Topnet" sequence="1" web_icon="Topnet,static/description/logo-topnet.png"/>
+    <menuitem id="topnet_client" name="Clients" parent="topnet_root" action="action_clt" sequence="2"/>
+    <menuitem id="topnet_suivi_dossier" name="Créer dossier" parent="topnet_client" action="action_clt"
+              sequence="2"/>
 
 </odoo>

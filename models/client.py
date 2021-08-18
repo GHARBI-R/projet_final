@@ -35,6 +35,7 @@ class TopnetClient(models.Model):
     douane = fields.Char(string='code en douane')
     activity = fields.Char(string="Activité de l'entreprise")
     adresse_s = fields.Char(string='Adresse Siege Sociale')
+    adresse_f = fields.Char(string='Adresse de facturation')
     # ville  et code postale
     tel_s = fields.Integer(string='Tél', size=8)
     fax_s = fields.Integer(string='Fax', size=8)

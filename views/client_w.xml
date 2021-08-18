@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- inscription client -->
+
+    <template id="create_client" name="Inscription Client">
+        <t t-call="website.layout">
+            <div id="wrap">
+                <div class="oe_structure">
+                    <div class="container">
+                        <form role="form" action="create/client" method="post">
+                            <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+
+                            <div class="form-group">
+                                <label for="name" class="control-label">Nom et prénom du gérant</label>
+                                <input type="text" name="name" t-att-value="name" id="name"
+                                       class="form-control" required="required"></input>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="user_email" class="control-label">Numéro CIN/ Passeport</label>
+                                <input type="text" name="cin" t-att-value="cin" id="cin"
+                                       class="form-control" required="required"></input>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="user_email" class="control-label">Raison sociale</label>
+                                <input type="text" name="raison" t-att-value="raison" id="raison"
+                                       class="form-control" required="required"></input>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="user_email" class="control-label">Registre de commerce</label>
+                                <input type="text" name="rc" t-att-value="rc" id="rc"
+                                       class="form-control" required="required"></input>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="user_email" class="control-label">code TVA</label>
+                                <input type="text" name="tva" t-att-value="tva" id="tva"
+                                       class="form-control" required="required"></input>
+                            </div>
+
+
+                            <div>
+                                <label class="form-check form-check-inline" for="defaultCheck1">
+                                    Exonéré
+                                </label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" t-att-value="exonere"
+                                       value="option1"></input>
+                                <label class="form-check-label" for="inlineCheckbox1">OUI</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" id="inlineCheckbox2"
+                                       value="option2" t-att-value="exonere"></input>
+                                <label class="form-check-label" for="inlineCheckbox2">NON</label>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="user_email" class="control-label">code en douane</label>
+                                <input type="text" name="douane" t-att-value="douane" id="douane"
+                                       class="form-control" required="required"></input>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="user_email" class="control-label">Activité de l'entreprise</label>
+                                <input type="text" name="activity" t-att-value="activity" id="activity"
+                                       class="form-control" required="required"></input>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="user_email" class="control-label">adresse de correspondance</label>
+                                <input type="text" name="adresse_s" t-att-value="adresse_s" id="adresse_s"
+                                       class="form-control" required="required"></input>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="col">
+                                    <label for="user_email" class="control-label">Gouvernorat</label>
+                                    <select class="form-control form-control-sm">
+                                        <option>Tunis</option>
+                                        <option>Ariana</option>
+                                    </select>
+                                </div>
+                                <div class="col">
+                                    <label for="user_email" class="control-label">Ville</label>
+                                    <select class="form-control form-control-sm">
+                                        <option>Menzah 5</option>
+                                        <option>Menzah 6</option>
+                                    </select>
+                                </div>
+                                <div class="col">
+                                    <label for="user_email" class="control-label">Code Postal</label>
+                                    <input type="text" name="user_email" t-att-value="user_email" id="user_email"
+                                           class="form-control" placeholder="1003"
+                                           disabled='true'></input>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="user_email" class="control-label">Tél</label>
+                                <input type="text" name="" t-att-value="user_email" id=""
+                                       class="form-control" ></input>
+                            </div>
+                            <div class="form-group">
+                                <label for="user_email" class="control-label">Fax</label>
+                                <input type="text" name="" t-att-value="user_email" id=""
+                                       class="form-control" ></input>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="user_email" class="control-label">Adresse d'installation </label>
+                                <input type="text" name="" t-att-value="user_email" id=""
+                                       class="form-control" ></input>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="user_email" class="control-label">Tél</label>
+                                <input type="text" name="" t-att-value="user_email" id=""
+                                       class="form-control" ></input>
+                            </div>
+                            <div class="form-group">
+                                <label for="user_email" class="control-label">Fax</label>
+                                <input type="text" name="" t-att-value="user_email" id=""
+                                       class="form-control" ></input>
+                            </div>
+
+                            <div class="clearfix oe_login_buttons">
+                                <button type="submit" class="btn btn-success">Valider</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+
+    <!-- Success Page  -->
+
+    <record id="client_thanks" model="website.page">
+        <field name="name">Thanks</field>
+        <field name="type">qweb</field>
+        <field name="url">/user-success</field>
+        <field name="website_published">True</field>
+        <field name="key">pfe_topnet.client_thanks</field>
+        <field name="arch" type="xml">
+            <t name="Thanks" t-name="pfe_topnet.client_thanks">
+                <t t-call="website.layout">
+                    <div id="wrap">
+                        <div class="container">
+                            <h1>Success !</h1>
+                            <div class="row">
+                                <div class="col-lg-8">
+                                    <div class="alert alert-success" role="status">
+                                        Le client  a été ajouté avec succès.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </field>
+    </record>
+
+ <!--    list client form-->
+    <template id="client_list" name="Liste utilisateurs ">
+        <t t-call="website.layout">
+            <div class="container">
+
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <td>
+                                Nom des clients
+                            </td>
+                            <td>
+                                cin des clients
+                            </td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <t t-foreach="clients " t-as="clients">
+                            <tr>
+                                <td>
+                                    <t t-esc="clients.name"/>
+                                </td>
+
+
+                                <td>
+                                    <t t-esc="clients.cin"/>
+                                </td>
+                            </tr>
+                        </t>
+                    </tbody>
+                </table>
+
+            </div>
+        </t>
+    </template>
+
+
+
+</odoo>

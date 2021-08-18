@@ -25,6 +25,7 @@
     'data': [
         'security/ir.model.access.csv',
         'data/sequence.xml',
+        'views/client_w.xml',
         'views/client.xml',
         'views/user.xml',
         'views/views.xml',
@@ -39,6 +40,6 @@
     'installable': True,
     'application': True,
     'auto_install': False,
-    'sequence':'0',
+    'sequence': '0',
     'images': ['static/description/banner.png']
 }
